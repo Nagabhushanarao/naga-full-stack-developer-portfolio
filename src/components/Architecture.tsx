@@ -76,12 +76,12 @@ export const Architecture: React.FC = () => {
 
         {/* Visual Pipeline Bar */}
         <div className="mb-10 overflow-x-auto pb-4">
-          <div className="min-w-[700px] flex items-center justify-between gap-3 p-4 rounded-2xl bg-white dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 shadow-sm">
+          <div className="inline-flex min-w-full items-center justify-between gap-1.5 sm:gap-2.5 p-3 sm:p-4 rounded-2xl bg-white dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 shadow-sm">
             {steps.map((step, idx) => (
               <React.Fragment key={step.num}>
                 <button
                   onClick={() => setActiveStep(idx)}
-                  className={`flex-1 p-3.5 rounded-xl text-left transition-all duration-200 flex items-center gap-3 ${
+                  className={`flex-1 min-w-[165px] lg:min-w-0 p-3 rounded-xl text-left transition-all duration-200 flex items-center gap-2.5 ${
                     activeStep === idx
                       ? 'bg-slate-900 text-white dark:bg-slate-800 ring-2 ring-brand-500 shadow-md'
                       : 'hover:bg-slate-100 dark:hover:bg-slate-800/50 text-slate-700 dark:text-slate-300'
@@ -90,13 +90,13 @@ export const Architecture: React.FC = () => {
                   <div className={`p-2 rounded-lg shrink-0 ${activeStep === idx ? 'bg-slate-800 dark:bg-slate-700' : 'bg-slate-100 dark:bg-slate-800'}`}>
                     {step.icon}
                   </div>
-                  <div className="min-w-0">
-                    <span className="text-[10px] font-mono uppercase tracking-wider opacity-60">Step {step.num}</span>
+                  <div className="min-w-0 flex-1">
+                    <span className="text-[10px] font-mono uppercase tracking-wider opacity-60 block">Step {step.num}</span>
                     <h4 className="text-xs font-bold truncate">{step.title}</h4>
                   </div>
                 </button>
                 {idx < steps.length - 1 && (
-                  <ArrowRight className="w-4 h-4 text-slate-400 shrink-0" />
+                  <ArrowRight className="w-4 h-4 text-slate-400 shrink-0 mx-0.5" />
                 )}
               </React.Fragment>
             ))}
