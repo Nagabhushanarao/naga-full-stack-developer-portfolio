@@ -99,6 +99,8 @@ npm run preview
 
 The repository includes a GitHub Actions workflow (`.github/workflows/deploy.yml`).
 
+For a detailed walkthrough, see [DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md).
+
 ### To publish your portfolio live:
 1. Commit and push the code to `main`:
    ```bash
